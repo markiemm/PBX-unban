@@ -59,4 +59,11 @@ async def unblock(message, ip_addr):
         await message.channel.purge(limit=999)
         await message.channel.send("Not valid")
 
+
+@bot.event
+async def on_ready():
+    print(f'[*] Discord.py API Version: {discord.__version__}')
+    print(f'[*] Logged in as {bot.user} | {bot.user.id}')
+
+
 bot.run("")
